@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+    <ItemGroup>
+        <AvaloniaResource Include="Assets\**" />
+        <None Remove=".gitignore" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Autofac" Version="6.3.0" />
+        <PackageReference Include="Avalonia" Version="0.10.10" />
+        <PackageReference Include="Avalonia.Desktop" Version="0.10.10" />
+        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.10" />
+        <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.10" />
+        <PackageReference Include="Avalonia.Svg.Skia" Version="0.10.10" />
+        <PackageReference Include="Avalonia.Xaml.Behaviors" Version="0.10.10" />
+        <PackageReference Include="Avalonia.Xaml.Interactions" Version="0.10.10" />
+        <PackageReference Include="Avalonia.Xaml.Interactivity" Version="0.10.10" />
+        <PackageReference Include="Splat.Autofac" Version="13.1.42" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\HelloCommander.BL\HelloCommander.BL.csproj" />
+      <ProjectReference Include="..\HelloCommander.Core\HelloCommander.Core.csproj" />
+      <ProjectReference Include="..\HelloCommander.Themes.Default\HelloCommander.Themes.Default.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Update="Windows\Dialogs\MessageBox.axaml.cs">
+        <DependentUpon>MessageBox.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Windows\Dialogs\HcEditNameWindow.axaml.cs">
+        <DependentUpon>HcEditNameWindow.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
+</Project>

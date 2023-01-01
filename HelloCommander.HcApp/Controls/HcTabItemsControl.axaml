@@ -1,0 +1,88 @@
+<UserControl
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="HelloCommander.HcApp.Controls.HcTabItemsControl"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:ct="clr-namespace:HelloCommander.HcApp.Controls;assembly=HelloCommander.HcApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:HelloCommander.Core.ViewModels.Controls"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Design.DataContext>
+        <vm:HcTabItemsViewModel />
+    </Design.DataContext>
+
+    <ListBox
+        Classes="HcTab"
+        Items="{Binding Items}"
+        SelectedItem="{Binding SelectedItem}">
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <Border>
+                    <Grid ColumnDefinitions="Auto,*">
+                        <Svg
+                            EnableCache="True"
+                            Grid.Column="0"
+                            Path="{Binding Extension, Converter={StaticResource HcTabItemSvgConverter}}" />
+                        <TextBlock Grid.Column="1" Text="{Binding Name}" />
+                    </Grid>
+                    <Border.ContextMenu>
+                        <ct:HcContextMenu Name="TabItemContextMenu">
+                            <MenuItem
+                                Command="{Binding $parent[ct:HcTabItemsControl].DataContext.AddToBookmarksCommand}"
+                                CommandParameter="{Binding}"
+                                Header="Add to bookmarks" />
+                            <MenuItem
+                                Command="{Binding $parent[ct:HcTabItemsControl].DataContext.SetAsHomeCommand}"
+                                CommandParameter="{Binding}"
+                                Header="Set as home"
+                                IsVisible="{Binding IsDirectory}" />
+                            <Separator />
+                            <MenuItem
+                                Command="{Binding $parent[ct:HcTabItemsControl].DataContext.RenameTabItemCommand}"
+                                CommandParameter="{Binding}"
+                                Header="Rename"
+                                IsEnabled="{Binding ActionsEnabled}" />
+                            <MenuItem
+                                Command="{Binding $parent[ct:HcTabItemsControl].DataContext.CopyTabItemCommand}"
+                                CommandParameter="{Binding}"
+                                Header="Copy"
+                                IsEnabled="{Binding ActionsEnabled}" />
+                            <MenuItem
+                                Command="{Binding $parent[ct:HcTabItemsControl].DataContext.DeleteTabItemCommand}"
+                                CommandParameter="{Binding}"
+                                Header="Delete"
+                                IsEnabled="{Binding ActionsEnabled}" />
+                            <MenuItem
+                                Command="{Binding $parent[ct:HcTabItemsControl].DataContext.TerminalFromHereCommand}"
+                                CommandParameter="{Binding}"
+                                Header="Terminal from here"
+                                IsVisible="{Binding IsDirectory}" />
+                        </ct:HcContextMenu>
+                    </Border.ContextMenu>
+                </Border>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+        <i:Interaction.Behaviors>
+            <EventTriggerBehavior EventName="DoubleTapped">
+                <InvokeCommandAction Command="{Binding OpenCommand}" CommandParameter="{Binding SelectedItem}" />
+            </EventTriggerBehavior>
+        </i:Interaction.Behaviors>
+        <ListBox.ContextMenu>
+            <ct:HcContextMenu Name="TabItemContextMenu">
+                <MenuItem
+                    Command="{Binding PasteTabItemCommand}"
+                    CommandParameter="{Binding CurrentDirectory}"
+                    Header="Paste" />
+                <MenuItem
+                    Command="{Binding TerminalFromHereCommand}"
+                    CommandParameter="{Binding CurrentDirectory}"
+                    Header="Terminal from here" />
+            </ct:HcContextMenu>
+        </ListBox.ContextMenu>
+    </ListBox>
+
+</UserControl>

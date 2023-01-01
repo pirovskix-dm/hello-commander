@@ -1,0 +1,186 @@
+<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style Selector="Grid.HcBookmarks">
+        <Setter Property="Background" Value="{DynamicResource HcControlBrush2}" />
+    </Style>
+
+    <!--  Menu  -->
+    <Style Selector="Grid.HcBookmarks Menu">
+        <Setter Property="Background" Value="{DynamicResource HcControlBrush2}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Height" Value="30" />
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Padding="{TemplateBinding Padding}">
+                    <ItemsPresenter
+                        ItemTemplate="{TemplateBinding ItemTemplate}"
+                        Items="{TemplateBinding Items}"
+                        ItemsPanel="{TemplateBinding ItemsPanel}"
+                        KeyboardNavigation.TabNavigation="Continue"
+                        Name="PART_ItemsPresenter" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <!--  MenuItem  -->
+    <Style Selector="Grid.HcBookmarks MenuItem">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0 0 0 1" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Margin" Value="3 0" />
+        <Setter Property="Padding" Value="10 0" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="Foreground" Value="{StaticResource HcForegroundBrush1}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <!--  Menu > MenuItem  -->
+    <Style Selector="Grid.HcBookmarks Menu &gt; MenuItem">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Padding" Value="10 0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Name="root">
+                    <Panel>
+                        <ContentPresenter
+                            Content="{TemplateBinding Header}"
+                            Margin="{TemplateBinding Padding}"
+                            Name="PART_HeaderPresenter"
+                            VerticalContentAlignment="Center">
+                            <ContentPresenter.DataTemplates>
+                                <DataTemplate>
+                                    <Grid ColumnDefinitions="*,Auto">
+                                        <TextBlock>IconHere</TextBlock>
+                                        <AccessText
+                                            Foreground="{StaticResource HcForegroundBrush1}"
+                                            Grid.Column="1"
+                                            Text="{Binding}" />
+                                    </Grid>
+                                </DataTemplate>
+                            </ContentPresenter.DataTemplates>
+                        </ContentPresenter>
+                        <Popup
+                            IsLightDismissEnabled="False"
+                            IsOpen="{TemplateBinding IsSubMenuOpen,
+                                                     Mode=TwoWay}"
+                            Name="PART_Popup"
+                            OverlayInputPassThroughElement="{Binding $parent[Menu]}">
+                            <Border
+                                Background="{StaticResource HcControlBrush2}"
+                                BorderBrush="{StaticResource HcAccentBrush1}"
+                                BorderThickness="1"
+                                CornerRadius="0">
+                                <ScrollViewer Classes="menuscroller">
+                                    <ItemsPresenter
+                                        Grid.IsSharedSizeScope="True"
+                                        ItemTemplate="{TemplateBinding ItemTemplate}"
+                                        Items="{TemplateBinding Items}"
+                                        ItemsPanel="{TemplateBinding ItemsPanel}"
+                                        Name="PART_ItemsPresenter" />
+                                </ScrollViewer>
+                            </Border>
+                        </Popup>
+                    </Panel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks Menu &gt; MenuItem:pointerover /template/ Border">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush3}" />
+        <Setter Property="BorderThickness" Value="0 0 0 1" />
+        <Setter Property="BorderBrush" Value="{StaticResource HcAccentBrush1}" />
+    </Style>
+
+    <!--  Button  -->
+    <Style Selector="Grid.HcBookmarks Button">
+        <Setter Property="Width" Value="28" />
+        <Setter Property="Height" Value="28" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0 0 0 1" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{StaticResource HcForegroundBrush1}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                    <Viewbox
+                        Height="18"
+                        HorizontalAlignment="Center"
+                        Stretch="Uniform"
+                        VerticalAlignment="Center"
+                        Width="18">
+                        <ContentPresenter
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            Name="PART_ContentPresenter"
+                            Padding="{TemplateBinding Padding}"
+                            RecognizesAccessKey="True"
+                            TextBlock.Foreground="{TemplateBinding Foreground}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Viewbox>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks Button:pointerover /template/ Border">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush3}" />
+        <Setter Property="BorderThickness" Value="0 0 0 1" />
+        <Setter Property="BorderBrush" Value="{StaticResource HcAccentBrush1}" />
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks Button:pointerover">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush3}" />
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks Button:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks Button:pressed  /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks Button:disabled  /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+
+    <!--  Popup  -->
+    <Style Selector="Grid.HcBookmarks Popup" />
+
+    <Style Selector="Grid.HcBookmarks PopupRoot" />
+</Styles>

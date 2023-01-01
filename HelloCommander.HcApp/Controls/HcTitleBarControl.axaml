@@ -1,0 +1,22 @@
+﻿<UserControl
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="HelloCommander.HcApp.Controls.HcTitleBarControl"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:controls="using:HelloCommander.HcApp.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:HelloCommander.Core.ViewModels.Windows"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Grid Background="Transparent" ColumnDefinitions="Auto,*,Auto">
+        <controls:HcTabsPanelControl Grid.Column="0" />
+        <controls:HcSystemTitleBarButtonsControl Grid.Column="2" />
+    </Grid>
+
+</UserControl>

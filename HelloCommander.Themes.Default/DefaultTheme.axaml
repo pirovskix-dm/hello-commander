@@ -1,0 +1,13 @@
+﻿<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StyleInclude Source="avares://HelloCommander.Themes.Default/Icons.axaml" />
+    <StyleInclude Source="avares://HelloCommander.Themes.Default/HcSystemTitleBarButton.axaml" />
+    <StyleInclude Source="avares://HelloCommander.Themes.Default/HcTabsPanel.axaml" />
+    <StyleInclude Source="avares://HelloCommander.Themes.Default/HcTabsPanelItem.axaml" />
+    <StyleInclude Source="avares://HelloCommander.Themes.Default/HcTabItem.axaml" />
+    <StyleInclude Source="avares://HelloCommander.Themes.Default/HcTab.axaml" />
+    <StyleInclude Source="avares://HelloCommander.Themes.Default/HcWindow.axaml" />
+    <StyleInclude Source="avares://HelloCommander.Themes.Default/HcSystemTitleBar.axaml" />
+    <StyleInclude Source="avares://HelloCommander.Themes.Default/HcNavigation.axaml" />
+    <StyleInclude Source="avares://HelloCommander.Themes.Default/HcBookmarks.axaml" />
+    <StyleInclude Source="avares://HelloCommander.Themes.Default/HcTabTerminal.axaml" />
+</Styles>

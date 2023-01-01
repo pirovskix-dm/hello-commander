@@ -1,0 +1,72 @@
+﻿<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style Selector="StackPanel.HcSystemTitleBar Button">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="{DynamicResource HcForegroundBrush4}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Width" Value="44" />
+        <Setter Property="Height" Value="28" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                    <Viewbox
+                        Height="16"
+                        Stretch="Uniform"
+                        Width="16">
+                        <ContentPresenter
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            Name="PART_ContentPresenter"
+                            Padding="{TemplateBinding Padding}"
+                            RecognizesAccessKey="True"
+                            TextBlock.Foreground="{TemplateBinding Foreground}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Viewbox>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="StackPanel.HcSystemTitleBar PathIcon">
+        <Setter Property="Foreground" Value="{DynamicResource HcForegroundBrush1}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style Selector="StackPanel.HcSystemTitleBar Button:pointerover /template/ Border">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush2}" />
+    </Style>
+
+    <Style Selector="StackPanel.HcSystemTitleBar Button:pressed  /template/ Border">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush3}" />
+    </Style>
+
+    <Style Selector="StackPanel.HcSystemTitleBar Button.HcSystemTitleBarAlertButton:pointerover /template/ Border">
+        <Setter Property="Background" Value="{StaticResource HcAlertBrush}" />
+    </Style>
+
+    <Style Selector="StackPanel.HcSystemTitleBar Button.HcSystemTitleBarAlertButton:pointerover PathIcon">
+        <Setter Property="Foreground" Value="{StaticResource HcForegroundBrush4}" />
+    </Style>
+
+    <Style Selector="StackPanel.HcSystemTitleBar Button.HcSystemTitleBarAlertButton:pressed /template/ Border">
+        <Setter Property="Background" Value="{StaticResource HcAlertBrush}" />
+    </Style>
+
+    <Style Selector="StackPanel.HcSystemTitleBar Button:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="StackPanel.HcSystemTitleBar Button:pressed  /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+
+</Styles>

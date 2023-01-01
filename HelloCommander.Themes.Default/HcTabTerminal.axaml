@@ -1,0 +1,185 @@
+<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style Selector="StackPanel.HcTabTerminal">
+        <Setter Property="Orientation" Value="Vertical" />
+        <Setter Property="Margin" Value="8" />
+    </Style>
+
+    <Style Selector="StackPanel.HcTabTerminal Grid.HcTerminalCommandsPanel">
+        <Setter Property="Margin" Value="0 0 0 5" />
+    </Style>
+
+    <Style Selector="StackPanel.HcTabTerminal StackPanel">
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="Margin" Value="2" />
+    </Style>
+
+    <Style Selector="StackPanel.HcTabTerminal Button.HcTerminalOpenButton">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Width" Value="130" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Foreground" Value="{DynamicResource HcForegroundBrush1}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Padding" Value="1" />
+        <Setter Property="Margin" Value="1" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                    <ContentPresenter
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        Name="PART_ContentPresenter"
+                        Padding="{TemplateBinding Padding}"
+                        RecognizesAccessKey="True"
+                        TextBlock.FontSize="{DynamicResource HcFontSizeLarge}"
+                        TextBlock.Foreground="{TemplateBinding Foreground}"
+                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="StackPanel.HcTabTerminal Button.HcTerminalExpendButton">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Width" Value="30" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Foreground" Value="{DynamicResource HcForegroundBrush1}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="Margin" Value="3" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                    <Viewbox
+                        Height="20"
+                        HorizontalAlignment="Center"
+                        Stretch="Uniform"
+                        VerticalAlignment="Center"
+                        Width="20">
+                        <ContentPresenter
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            Name="PART_ContentPresenter"
+                            Padding="{TemplateBinding Padding}"
+                            RecognizesAccessKey="True"
+                            TextBlock.FontSize="{DynamicResource HcFontSizeSmall}"
+                            TextBlock.Foreground="{TemplateBinding Foreground}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Viewbox>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="StackPanel.HcTabTerminal Button:pointerover">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush2}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{StaticResource HcAccentBrush1}" />
+    </Style>
+
+    <Style Selector="StackPanel.HcTabTerminal Button:pressed">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush3}" />
+    </Style>
+
+    <Style Selector="StackPanel.HcTabTerminal Button:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="StackPanel.HcTabTerminal Button:pressed  /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <!--  HcTerminalTextBox  -->
+    <Style Selector="StackPanel.HcTabTerminal TextBox.HcTerminalTextBox">
+        <Setter Property="FontSize" Value="{StaticResource HcFontSizeLarge}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Margin" Value="2 0 2 0" />
+        <Setter Property="SelectionForegroundBrush" Value="White" />
+        <Setter Property="SelectionBrush" Value="Green" />
+        <!-- <Setter Property="VerticalAlignment" Value="Center" /> -->
+        <Setter Property="Background" Value="Black" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="10 0" />
+        <!-- <Setter Property="VerticalContentAlignment" Value="Center"/> -->
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="CaretBrush">
+            <SolidColorBrush Color="White" />
+        </Setter>
+    </Style>
+
+    <Style Selector="StackPanel.HcTabTerminal TextBox.HcTerminalTextBox /template/ Border">
+        <Setter Property="Background" Value="Black" />
+    </Style>
+
+    <Style Selector="StackPanel.HcTabTerminal TextBox.HcTerminalTextBox:pointerover /template/ Border">
+        <Setter Property="Background" Value="Black" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <Style Selector="StackPanel.HcTabTerminal TextBox.HcTerminalTextBox:focus /template/ Border">
+        <Setter Property="Background" Value="Black" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <Style Selector="StackPanel.HcTabTerminal TextBox.HcTerminalTextBox /template/ DockPanel">
+        <Setter Property="Cursor" Value="IBeam" />
+    </Style>
+
+    <!--  HcTerminalCommandTextBox  -->
+    <Style Selector="StackPanel.HcTabTerminal TextBox.HcTerminalCommandTextBox">
+        <Setter Property="FontSize" Value="{StaticResource HcFontSizeLarge}" />
+        <Setter Property="Foreground" Value="{StaticResource HcForegroundBrush1}" />
+        <Setter Property="Margin" Value="2 0 2 0" />
+        <Setter Property="SelectionForegroundBrush" Value="{StaticResource HcForegroundBrush1}" />
+        <Setter Property="SelectionBrush" Value="{StaticResource HcControlBrush3}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Background" Value="{StaticResource HcControlBrush2}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="10 0" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="CornerRadius" Value="0" />
+    </Style>
+
+    <Style Selector="StackPanel.HcTabTerminal TextBox.HcTerminalCommandTextBox /template/ Border">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush2}" />
+    </Style>
+
+    <Style Selector="StackPanel.HcTabTerminal TextBox.HcTerminalCommandTextBox:pointerover /template/ Border">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush2}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <Style Selector="StackPanel.HcTabTerminal TextBox.HcTerminalCommandTextBox:focus /template/ Border">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush1}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <Style Selector="StackPanel.HcTabTerminal TextBox.HcTerminalCommandTextBox /template/ DockPanel">
+        <Setter Property="Cursor" Value="IBeam" />
+    </Style>
+
+</Styles>

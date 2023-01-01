@@ -1,0 +1,70 @@
+﻿<UserControl
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="HelloCommander.HcApp.Controls.HcTabsPanelControl"
+    x:Name="HcTabsPanel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:ct="clr-namespace:HelloCommander.HcApp.Controls;assembly=HelloCommander.HcApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:HelloCommander.Core.ViewModels.Windows"
+    xmlns:wn="clr-namespace:HelloCommander.HcApp.Windows;assembly=HelloCommander.HcApp"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Grid ColumnDefinitions="Auto,Auto">
+
+        <!--  Tabs  -->
+        <ListBox
+            Classes="HcTabsPanel"
+            Grid.Column="0"
+            Items="{Binding Tabs}"
+            Name="HcTabsPanelListBox"
+            SelectedItem="{Binding SelectedTab}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border>
+                        <Grid>
+                            <TextBlock Text="{Binding Name}">
+                                <!-- <ToolTip.Tip> -->
+                                <!--     <TextBlock Text="{Binding Name}" /> -->
+                                <!-- </ToolTip.Tip> -->
+                            </TextBlock>
+                            <Button Command="{Binding DataContext.CloseTabCommand, ElementName=HcTabsPanel}" CommandParameter="{Binding}">
+                                <PathIcon Data="{StaticResource window-close}" />
+                            </Button>
+                        </Grid>
+                        <Border.ContextMenu>
+                            <ct:HcContextMenu Name="TabItemContextMenu">
+                                <MenuItem Header="{Binding Name}" IsEnabled="False" />
+                                <Separator />
+                                <MenuItem
+                                    Command="{Binding $parent[wn:MainWindow].DataContext.DuplicateTabCommand}"
+                                    CommandParameter="{Binding}"
+                                    Header="Duplicate tab" />
+                                <MenuItem
+                                    Command="{Binding $parent[wn:MainWindow].DataContext.CloseTabCommand}"
+                                    CommandParameter="{Binding}"
+                                    Header="Close tab" />
+                            </ct:HcContextMenu>
+                        </Border.ContextMenu>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!--  Add Tab Button  -->
+        <Button
+            Classes="HcTabsPanelAddButton"
+            Command="{Binding AddTabCommand}"
+            Grid.Column="1">
+            <PathIcon Data="{StaticResource simple-plus}" />
+        </Button>
+
+    </Grid>
+
+</UserControl>

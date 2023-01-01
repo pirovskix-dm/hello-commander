@@ -1,0 +1,23 @@
+﻿<UserControl
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="HelloCommander.HcApp.Controls.HcSystemTitleBarButtonsControl"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <StackPanel Classes="HcSystemTitleBar">
+        <Button Click="CollapseButton_OnClick">
+            <PathIcon Data="{StaticResource window-minimize}" />
+        </Button>
+        <Button Click="ExpandButton_OnClick">
+            <PathIcon Data="{StaticResource window-maximize}" />
+        </Button>
+        <Button Classes="HcSystemTitleBarAlertButton" Click="CloseButton_OnClick">
+            <PathIcon Data="{StaticResource window-close}" />
+        </Button>
+    </StackPanel>
+
+</UserControl>

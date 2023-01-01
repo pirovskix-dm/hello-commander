@@ -1,0 +1,121 @@
+<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style Selector="Grid.HcNavigation">
+        <Setter Property="Background" Value="{DynamicResource HcControlBrush2}" />
+    </Style>
+
+    <Style Selector="Grid.HcNavigation Button">
+        <Setter Property="Width" Value="28" />
+        <Setter Property="Height" Value="28" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{StaticResource HcForegroundBrush1}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                    <Viewbox
+                        Height="18"
+                        HorizontalAlignment="Center"
+                        Stretch="Uniform"
+                        VerticalAlignment="Center"
+                        Width="18">
+                        <ContentPresenter
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            Name="PART_ContentPresenter"
+                            Padding="{TemplateBinding Padding}"
+                            RecognizesAccessKey="True"
+                            TextBlock.Foreground="{TemplateBinding Foreground}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Viewbox>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="Grid.HcNavigation Button:pointerover">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush3}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{StaticResource HcAccentBrush1}" />
+    </Style>
+
+    <Style Selector="Grid.HcNavigation Button:pressed">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush4}" />
+    </Style>
+
+    <Style Selector="Grid.HcNavigation Button:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="Grid.HcNavigation Button:pressed  /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="Grid.HcNavigation Button:disabled  /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="Grid.HcNavigation PathIcon">
+        <Setter Property="Foreground" Value="{StaticResource HcForegroundBrush1}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style Selector="Grid.HcNavigation Button:disabled  PathIcon">
+        <Setter Property="Foreground" Value="{StaticResource HcForegroundBrush3}" />
+    </Style>
+
+
+    <!--  TextBox  -->
+    <Style Selector="Grid.HcNavigation TextBox">
+        <Setter Property="FontSize" Value="{StaticResource HcFontSizeLarge}" />
+        <Setter Property="Foreground" Value="{StaticResource HcForegroundBrush1}" />
+        <Setter Property="Margin" Value="2 0 2 0" />
+        <Setter Property="SelectionForegroundBrush" Value="{StaticResource HcForegroundBrush1}" />
+        <Setter Property="SelectionBrush" Value="{StaticResource HcControlBrush3}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Background" Value="{StaticResource HcControlBrush2}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="10 0" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="CornerRadius" Value="0" />
+    </Style>
+
+    <Style Selector="Grid.HcNavigation TextBox /template/ Border">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush2}" />
+        <!-- <Setter Property="BorderBrush" Value="{StaticResource HcForegroundBrush4}"/> -->
+        <!-- <Setter Property="BorderThickness" Value="1 0 0 0"/> -->
+    </Style>
+
+    <Style Selector="Grid.HcNavigation TextBox:pointerover /template/ Border">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush2}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <Style Selector="Grid.HcNavigation TextBox:focus /template/ Border">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush1}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <Style Selector="Grid.HcNavigation TextBox /template/ DockPanel">
+        <Setter Property="Cursor" Value="IBeam" />
+    </Style>
+
+</Styles>

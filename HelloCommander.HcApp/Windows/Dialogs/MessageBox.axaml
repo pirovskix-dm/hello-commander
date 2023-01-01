@@ -1,0 +1,39 @@
+<Window
+    CanResize="False"
+    ExtendClientAreaToDecorationsHint="True"
+    Height="200"
+    SystemDecorations="None"
+    Title="MessageBox"
+    Width="400"
+    WindowStartupLocation="CenterOwner"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="HelloCommander.HcApp.Windows.Dialogs.MessageBox"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <StackPanel
+        HorizontalAlignment="Center"
+        Margin="10"
+        VerticalAlignment="Center">
+        <TextBlock
+            FontSize="20"
+            HorizontalAlignment="Center"
+            Name="Text"
+            TextWrapping="Wrap" />
+        <StackPanel
+            HorizontalAlignment="Center"
+            Name="Buttons"
+            Orientation="Horizontal">
+            <StackPanel.Styles>
+                <Style Selector="Button">
+                    <Setter Property="Margin" Value="5" />
+                </Style>
+            </StackPanel.Styles>
+        </StackPanel>
+    </StackPanel>
+
+</Window>

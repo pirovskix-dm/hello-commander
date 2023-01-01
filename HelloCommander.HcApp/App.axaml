@@ -1,0 +1,10 @@
+<Application
+    x:Class="HelloCommander.HcApp.App"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Application.Styles>
+        <FluentTheme Mode="Light" />
+        <StyleInclude Source="avares://HelloCommander.Themes.Default/Accents/BaseLight.axaml" />
+        <StyleInclude Source="avares://HelloCommander.Themes.Default/DefaultTheme.axaml" />
+    </Application.Styles>
+</Application>

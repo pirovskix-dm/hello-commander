@@ -1,0 +1,42 @@
+root = true
+# top-most EditorConfig file
+
+# Don't use tabs for indentation.
+[*]
+indent_style = space
+charset = utf-8-bom
+end_of_line = crlf
+trim_trailing_whitespace = false
+indent_size = 4
+
+# ReSharper properties
+resharper_braces_for_for = required
+resharper_braces_for_foreach = required
+resharper_braces_for_ifelse = required
+resharper_braces_for_while = required
+resharper_enforce_line_ending_style = true
+resharper_local_function_body = expression_body
+resharper_method_or_operator_body = expression_body
+resharper_use_indent_from_vs = false
+
+# Code files
+[*.{cs,csx,vb,vbx}]
+insert_final_newline = true
+charset = utf-8
+
+# XML config files
+[*.{props,targets,ruleset,config,nuspec,resx,vsixmanifest,vsct}]
+indent_size = 2
+
+# JSON files
+[*.json]
+indent_size = 2
+
+# Powershell files
+[*.ps1]
+indent_size = 2
+
+# Shell script files
+[*.sh]
+end_of_line = lf
+indent_size = 2

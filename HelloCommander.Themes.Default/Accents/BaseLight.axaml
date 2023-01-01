@@ -1,0 +1,56 @@
+﻿<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:c="clr-namespace:HelloCommander.Themes.Default.Converters"
+    xmlns:sys="clr-namespace:System;assembly=netstandard"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style>
+        <Style.Resources>
+
+            <!--  Colors  -->
+            <Color x:Key="HcBackgroundColor">#FFFFFFFF</Color>
+
+            <Color x:Key="HcAccentColor1">#CC119EDA</Color>
+
+            <Color x:Key="HcForegroundColor1">#FF333333</Color>
+            <Color x:Key="HcForegroundColor2">#FF777777</Color>
+            <Color x:Key="HcForegroundColor3">#FFAAAAAA</Color>
+            <Color x:Key="HcForegroundColor4">#FFDDDDDD</Color>
+
+            <Color x:Key="HcControlColor1">#FFFFFFFF</Color>
+            <Color x:Key="HcControlColor2">#FFE5E5E5</Color>
+            <Color x:Key="HcControlColor3">#FFCCCCCC</Color>
+            <Color x:Key="HcControlColor4">#FF999999</Color>
+
+            <Color x:Key="HcAlertColor">#FFE81123</Color>
+            <Color x:Key="HcErrorColor">#FFFF0000</Color>
+
+            <!--  Brushes  -->
+            <SolidColorBrush Color="{DynamicResource HcBackgroundColor}" x:Key="HcBackgroundBrush" />
+
+            <SolidColorBrush Color="{DynamicResource HcAccentColor1}" x:Key="HcAccentBrush1" />
+
+            <SolidColorBrush Color="{DynamicResource HcForegroundColor1}" x:Key="HcForegroundBrush1" />
+            <SolidColorBrush Color="{DynamicResource HcForegroundColor2}" x:Key="HcForegroundBrush2" />
+            <SolidColorBrush Color="{DynamicResource HcForegroundColor3}" x:Key="HcForegroundBrush3" />
+            <SolidColorBrush Color="{DynamicResource HcForegroundColor4}" x:Key="HcForegroundBrush4" />
+
+            <SolidColorBrush Color="{DynamicResource HcControlColor1}" x:Key="HcControlBrush1" />
+            <SolidColorBrush Color="{DynamicResource HcControlColor2}" x:Key="HcControlBrush2" />
+            <SolidColorBrush Color="{DynamicResource HcControlColor3}" x:Key="HcControlBrush3" />
+            <SolidColorBrush Color="{DynamicResource HcControlColor4}" x:Key="HcControlBrush4" />
+
+            <SolidColorBrush Color="{DynamicResource HcAlertColor}" x:Key="HcAlertBrush" />
+            <SolidColorBrush Color="{DynamicResource HcErrorColor}" x:Key="HcErrorBrush" />
+
+            <!--  Converters  -->
+            <c:HcTabItemSvgConverter x:Key="HcTabItemSvgConverter" />
+
+            <!--  Fonts  -->
+            <sys:Double x:Key="HcFontSizeSmall">10</sys:Double>
+            <sys:Double x:Key="HcFontSizeNormal">12</sys:Double>
+            <sys:Double x:Key="HcFontSizeLarge">16</sys:Double>
+
+        </Style.Resources>
+    </Style>
+</Styles>

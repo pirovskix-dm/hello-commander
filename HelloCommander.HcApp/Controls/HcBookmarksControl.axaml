@@ -1,0 +1,59 @@
+<UserControl
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="HelloCommander.HcApp.Controls.HcBookmarksControl"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:ct="using:HelloCommander.HcApp.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:HelloCommander.Core.ViewModels.Windows"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Grid Classes="HcBookmarks" ColumnDefinitions="Auto,Auto,*">
+        <Button Command="{Binding HomeCommand}" Grid.Column="0">
+            <PathIcon Data="{StaticResource home_regular}" />
+        </Button>
+        <ListBox
+            Grid.Column="2"
+            Items="{Binding Bookmarks}"
+            SelectionMode="Single">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border>
+                        <Grid ColumnDefinitions="Auto,*">
+                            <Svg
+                                EnableCache="True"
+                                Grid.Column="0"
+                                Path="{Binding Extension, Converter={StaticResource HcTabItemSvgConverter}}" />
+                            <TextBlock Grid.Column="1" Text="{Binding Header}" />
+                        </Grid>
+                        <i:Interaction.Behaviors>
+                            <EventTriggerBehavior EventName="Tapped">
+                                <InvokeCommandAction Command="{Binding ClickCommand}" CommandParameter="{Binding}" />
+                            </EventTriggerBehavior>
+                        </i:Interaction.Behaviors>
+                        <Border.ContextMenu>
+                            <ct:HcContextMenu Name="BookmarkMenu">
+                                <MenuItem
+                                    Command="{Binding RenameCommand}"
+                                    CommandParameter="{Binding}"
+                                    Header="Rename" />
+                                <MenuItem
+                                    Command="{Binding DeleteCommand}"
+                                    CommandParameter="{Binding}"
+                                    Header="Delete" />
+                            </ct:HcContextMenu>
+                        </Border.ContextMenu>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+
+</UserControl>

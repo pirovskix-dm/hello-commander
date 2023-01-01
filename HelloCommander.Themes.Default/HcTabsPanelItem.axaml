@@ -1,0 +1,154 @@
+﻿<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style Selector="ListBox.HcTabsPanel ListBoxItem">
+        <Setter Property="Background" Value="{DynamicResource HcControlBrush1}" />
+        <Setter Property="Height" Value="32" />
+        <Setter Property="ZIndex" Value="0" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="4 1" />
+        <Setter Property="Width" Value="150" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <ContentPresenter
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Content="{TemplateBinding Content}"
+                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                    CornerRadius="0"
+                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    Name="PART_ContentPresenter"
+                    Padding="{TemplateBinding Padding}"
+                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                    Width="{TemplateBinding Width}" />
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="ListBox.HcTabsPanel ListBoxItem:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource HcControlBrush1}" />
+    </Style>
+
+    <Style Selector="ListBox.HcTabsPanel ListBoxItem &gt; Border">
+        <Setter Property="Background" Value="{DynamicResource HcControlBrush1}" />
+    </Style>
+
+    <Style Selector="ListBox.HcTabsPanel ListBoxItem:selected /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource HcControlBrush2}" />
+        <Setter Property="ZIndex" Value="1" />
+    </Style>
+
+    <Style Selector="ListBox.HcTabsPanel ListBoxItem:selected &gt; Border">
+        <Setter Property="Background" Value="{DynamicResource HcControlBrush2}" />
+        <Setter Property="ZIndex" Value="1" />
+    </Style>
+
+    <Style Selector="ListBox.HcTabsPanel ListBoxItem:selected:focus /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource HcControlBrush2}" />
+        <Setter Property="ZIndex" Value="1" />
+    </Style>
+
+    <Style Selector="ListBox.HcTabsPanel ListBoxItem:selected:focus &gt; Border">
+        <Setter Property="Background" Value="{DynamicResource HcControlBrush2}" />
+        <Setter Property="ZIndex" Value="1" />
+    </Style>
+
+    <Style Selector="ListBox.HcTabsPanel ListBoxItem:selected:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource HcControlBrush2}" />
+        <Setter Property="ZIndex" Value="1" />
+    </Style>
+
+    <Style Selector="ListBox.HcTabsPanel ListBoxItem:selected:pointerover &gt; Border">
+        <Setter Property="Background" Value="{DynamicResource HcControlBrush2}" />
+        <Setter Property="ZIndex" Value="1" />
+    </Style>
+
+    <Style Selector="ListBox.HcTabsPanel ListBoxItem:selected:focus:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource HcControlBrush2}" />
+        <Setter Property="ZIndex" Value="1" />
+    </Style>
+
+    <Style Selector="ListBox.HcTabsPanel ListBoxItem:selected:focus:pointerover &gt; Border">
+        <Setter Property="Background" Value="{DynamicResource HcControlBrush2}" />
+        <Setter Property="ZIndex" Value="1" />
+    </Style>
+
+
+    <!--  TextBlock  -->
+    <Style Selector="ListBox.HcTabsPanel ListBoxItem TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Width" Value="115" />
+        <Setter Property="Margin" Value="4 0 0 0" />
+    </Style>
+
+
+    <!--  Buttons  -->
+    <Style Selector="ListBox.HcTabsPanel ListBoxItem Button">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Height" Value="16" />
+        <Setter Property="Width" Value="16" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="{DynamicResource HcForegroundBrush1}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Padding" Value="4" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                    <Viewbox
+                        Height="12"
+                        HorizontalAlignment="Center"
+                        Stretch="Uniform"
+                        VerticalAlignment="Center"
+                        Width="12">
+                        <ContentPresenter
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            Name="PART_ContentPresenter"
+                            Padding="{TemplateBinding Padding}"
+                            RecognizesAccessKey="True"
+                            TextBlock.Foreground="{TemplateBinding Foreground}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Viewbox>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="ListBox.HcTabsPanel ListBoxItem Button:pointerover">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="ListBox.HcTabsPanel ListBoxItem Button:pressed">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="ListBox.HcTabsPanel ListBoxItem Button:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="ListBox.HcTabsPanel ListBoxItem Button:pressed  /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+
+    <!--  PathIcon  -->
+    <Style Selector="ListBox.HcTabsPanel PathIcon">
+        <Setter Property="Foreground" Value="{DynamicResource HcForegroundBrush1}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+</Styles>

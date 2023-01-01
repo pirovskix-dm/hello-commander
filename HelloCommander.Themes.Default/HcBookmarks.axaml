@@ -1,0 +1,193 @@
+<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--  Grid  -->
+    <Style Selector="Grid.HcBookmarks">
+        <Setter Property="Background" Value="{DynamicResource HcControlBrush2}" />
+    </Style>
+
+    <!--  ListBox  -->
+    <Style Selector="Grid.HcBookmarks ListBox">
+
+        <Setter Property="ListBox.ItemsPanel">
+            <ItemsPanelTemplate>
+                <StackPanel Orientation="Horizontal" />
+            </ItemsPanelTemplate>
+        </Setter>
+
+        <Setter Property="Background" Value="{DynamicResource HcControlBrush2}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Name="border">
+                    <ScrollViewer
+                        AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
+                        Background="{TemplateBinding Background}"
+                        HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+                        Name="PART_ScrollViewer"
+                        VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+                        <ItemsPresenter
+                            ItemTemplate="{TemplateBinding ItemTemplate}"
+                            Items="{TemplateBinding Items}"
+                            ItemsPanel="{TemplateBinding ItemsPanel}"
+                            Margin="10,0"
+                            Name="PART_ItemsPresenter"
+                            VerticalAlignment="Center"
+                            VirtualizationMode="{TemplateBinding VirtualizationMode}" />
+                    </ScrollViewer>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks ListBox ListBoxItem">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0 0 0 1" />
+        <Setter Property="Margin" Value="3 0" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <ContentPresenter
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Content="{TemplateBinding Content}"
+                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                    CornerRadius="0"
+                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    Name="PART_ContentPresenter"
+                    Padding="{TemplateBinding Padding}"
+                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks ListBox ListBoxItem &gt; Border">
+        <Setter Property="Padding" Value="6 0" />
+        <Setter Property="Background" Value="{StaticResource HcControlBrush2}" />
+        <Setter Property="BorderThickness" Value="0 0 0 1" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks ListBox ListBoxItem:pointerover &gt; Border">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush3}" />
+        <Setter Property="BorderThickness" Value="0 0 0 1" />
+        <Setter Property="BorderBrush" Value="{StaticResource HcAccentBrush1}" />
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks ListBox ListBoxItem:selected &gt; Border">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush2}" />
+        <Setter Property="BorderThickness" Value="0 0 0 1" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks ListBox ListBoxItem:selected /template/ ContentPresenter">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush2}" />
+        <Setter Property="BorderThickness" Value="0 0 0 1" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks ListBox ListBoxItem:selected:focus &gt; Border">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush2}" />
+        <Setter Property="BorderThickness" Value="0 0 0 1" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks ListBox ListBoxItem:selected:pointerover &gt; Border">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush3}" />
+        <Setter Property="BorderThickness" Value="0 0 0 1" />
+        <Setter Property="BorderBrush" Value="{StaticResource HcAccentBrush1}" />
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks ListBox ListBoxItem:selected:focus:pointerover &gt; Border">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush3}" />
+        <Setter Property="BorderThickness" Value="0 0 0 1" />
+        <Setter Property="BorderBrush" Value="{StaticResource HcAccentBrush1}" />
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks ListBox ListBoxItem TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{StaticResource HcForegroundBrush1}" />
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks ListBox ListBoxItem Svg">
+        <Setter Property="Height" Value="18" />
+        <Setter Property="Width" Value="18" />
+        <Setter Property="Margin" Value="0 0 8 0" />
+    </Style>
+
+    <!--  Button  -->
+    <Style Selector="Grid.HcBookmarks Button">
+        <Setter Property="Width" Value="28" />
+        <Setter Property="Height" Value="28" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0 0 0 1" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{StaticResource HcForegroundBrush1}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                    <Viewbox
+                        Height="18"
+                        HorizontalAlignment="Center"
+                        Stretch="Uniform"
+                        VerticalAlignment="Center"
+                        Width="18">
+                        <ContentPresenter
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            Name="PART_ContentPresenter"
+                            Padding="{TemplateBinding Padding}"
+                            RecognizesAccessKey="True"
+                            TextBlock.Foreground="{TemplateBinding Foreground}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Viewbox>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks Button:pointerover /template/ Border">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush3}" />
+        <Setter Property="BorderThickness" Value="0 0 0 1" />
+        <Setter Property="BorderBrush" Value="{StaticResource HcAccentBrush1}" />
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks Button:pointerover">
+        <Setter Property="Background" Value="{StaticResource HcControlBrush3}" />
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks Button:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks Button:pressed  /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style Selector="Grid.HcBookmarks Button:disabled  /template/ ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+</Styles>
